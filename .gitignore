@@ -13,3 +13,18 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Temporary data
+**/tmp/*
+
+# Go workspace file
+go.work
+
+# Datastores
+*.db
+
+# Application config
+config.yaml
+
+# Air config
+.air.toml
