@@ -14,7 +14,6 @@
         crossorigin="anonymous"
     >
 
-
     <!-- font awesome -->
     <link 
         rel="stylesheet"
@@ -36,6 +35,7 @@
         <div class="music-container" id="music-container">
             <div class="music-info">
                 <h4 id="title"></h4>
+                <span class="duration" id="tracktime">0:0 / 0:0</span>
                 <div class="progress-container" id="progress-container">
                     <div class="progress" id="progress"></div>
                 </div>
@@ -56,6 +56,9 @@
                 </button>
                 <button id="next" class="action-btn">
                     <i class="fas fa-forward"></i>
+                </button>
+                <button id="auto" class="action-btn action-btn-active">
+                    <i class="fa-solid fa-a"></i>
                 </button>
             </div>
         </div>
