@@ -1,27 +1,102 @@
 body {
-  background-color: #343a40 !important;
-  overflow: hidden;
-  display: flex;
+  background-color: #343a40;
   justify-content: center;
-  align-items: center;
+  display: flex;
 }
 
-.parent {
+.music-container {
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0;
+  margin: 10px;
+  padding: 10px;
+  width: -moz-available;
+  z-index: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: white;
-  text-align: center;
+.img-container {
+  position: relative;
+  width: 110px;
+  z-index: 1;
+}
+
+.img-container img {
+  border-radius: 15%;
+  object-fit: cover;
+  height: 110px;
+  width: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.navigation {
+  padding: 0px 10px 10px 10px;
+  margin: auto;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: transparent;
+  border: 0;
+  color: #dfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn:hover {
+  color: #343a40;
+}
+
+.action-btn.action-btn-big {
+  font-size: 30px;
+}
+
+.action-btn.action-btn-active {
+  color: #343a40;
+}
+
+.music-info {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 40px);
+  padding: 0px 10px 10px 150px;
+  z-index: 1;
+}
+
+.music-info h4 {
+  color: #343a40;
+  margin: 0;
+  width: fit-content;
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
-input { text-align: center; }
+.duration {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.progress-container {
+  background-color: #cdc2d0;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #343a40;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: width 0.1s linear;
+}
