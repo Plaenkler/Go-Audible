@@ -43,6 +43,12 @@ func (manager *Manager) Start() {
 	manager.Router.HandleFunc("/",
 		routes.ProvideHomePage)
 
+	manager.Router.HandleFunc("/song",
+		routes.ProvideSong)
+
+	manager.Router.HandleFunc("/cover",
+		routes.ProvideCover)
+
 	err := manager.provideFiles(); 
 	if err != nil {
 		log.Panicf("[router] could not provide files - error: %s", err)
@@ -63,12 +69,13 @@ func (manager *Manager) Start() {
 func (manager *Manager) provideFiles() error {
 	defer handler.HandlePanic("router")
 
-	css, err := fs.Sub(static, "routes/static")
+	fs, err := fs.Sub(static, "routes/static")
 	if err != nil {
 		return err
 	}
 
-	manager.Router.Handle("/css/", http.FileServer(http.FS(css)))
+	manager.Router.Handle("/js/", http.FileServer(http.FS(fs)))
+	manager.Router.Handle("/css/", http.FileServer(http.FS(fs)))
 
 	return nil
 }
